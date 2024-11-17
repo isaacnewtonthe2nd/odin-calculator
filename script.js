@@ -57,24 +57,38 @@ function numberDisplay(strNum) {
 
 function operators (sign) {
   if (sign === '+') {
-    numeroUno = Number(displayContainer.value);
-    operator = sign;
+    checkExpression(sign);
   } else if (sign === '-') {
-    numeroUno = Number(displayContainer.value);
-    operator = sign;
+    checkExpression(sign);
   } else if (sign === '*') {
-    numeroUno = Number(displayContainer.value);
-    operator = sign;
+    checkExpression(sign);
   } else if (sign === '/') {
-    numeroUno = Number(displayContainer.value);
-    operator = sign;
+    checkExpression(sign);
   } else if (sign === '=') {
+    equalTo();
+  }
+}
+
+function equalTo () {
+  if (!numeroUno === true || (numeroUno !== undefined && operator === undefined)) {
+    return displayContainer.value;
+  } else {
     numeroDos = Number(displayContainer.value);
     let result = operate(operator, numeroUno, numeroDos);
     numeroUno = result;
     operator = undefined;
     strNumeroDos = '';
     return displayContainer.value = result;
+  }
+}
+
+function checkExpression (sign) {
+  if (numeroUno !== undefined && operator !== undefined) {
+    equalTo();
+    operator = sign;
+  } else {
+    numeroUno = Number(displayContainer.value);
+    operator = sign;
   }
 }
 
