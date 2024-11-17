@@ -2,6 +2,9 @@ let displayContainer = document.querySelector(".display-container");
 displayContainer.style.cssText = `width: ${500 - 40}px; height: ${(560 / 6)}px; padding: 8px; margin-bottom: 10px; background-color: grey; font-size: 70px; text-align: right; color: black;`;
 displayContainer.value = '0';
 
+let strNumeroUno = '';
+let strNumeroDos = '';
+
 let numeroUno;
 let numeroDos;
 let operator;
@@ -40,12 +43,46 @@ function numberDisplay(strNum) {
   if (Number(displayContainer.value) <= 10e9) {
     if (displayContainer.value === '0') {
       return displayContainer.value = strNum;
-    } else {
+    } else if (!operator === true) {
       return displayContainer.value += strNum;
+    } else if (!operator === false) {
+      strNumeroDos += strNum;
+      return displayContainer.value = strNumeroDos;
+      // return displayContainer.value += secondNumber;
     }
   } else {
     return displayContainer.value;
   }
+}
+
+function operators (sign) {
+  if (sign === '+') {
+    numeroUno = Number(displayContainer.value);
+    operator = sign;
+  } else if (sign === '-') {
+    numeroUno = Number(displayContainer.value);
+    operator = sign;
+  } else if (sign === '*') {
+    numeroUno = Number(displayContainer.value);
+    operator = sign;
+  } else if (sign === '/') {
+    numeroUno = Number(displayContainer.value);
+    operator = sign;
+  } else if (sign === '=') {
+    numeroDos = Number(displayContainer.value);
+    let result = operate(operator, numeroUno, numeroDos);
+    numeroUno = result;
+    operator = undefined;
+    strNumeroDos = '';
+    return displayContainer.value = result;
+  }
+}
+
+function erase () {
+  operator = undefined;
+  numeroUno = undefined;
+  strNumeroDos = '';
+  return displayContainer.value = '0';
 }
 
 // console.log(operate(operator, numeroUno, numeroDos));

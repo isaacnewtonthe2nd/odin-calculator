@@ -11,25 +11,25 @@
     <!-- <div class="display-container" id="display-containerId"></div> -->
     <input type="number" class="display-container" id="display-containerId">
     <div class="buttons">
-      <button class="colorOne" id="clear">AC</button>
+      <button onclick="erase()" class="colorOne">AC</button>
       <button class="colorOne">+/-</button>
       <button class="colorOne">%</button>
-      <button class="colorTwo" id="over">/</button>
-      <button onclick="numberDisplay('7')" class="colorThree" id="seven">7</button>
-      <button onclick="numberDisplay('8')" class="colorThree" id="eight">8</button>
-      <button onclick="numberDisplay('9')" class="colorThree" id="nine">9</button>
-      <button class="colorTwo" id="times">*</button>
-      <button onclick="numberDisplay('4')" class="colorThree" id="four">4</button>
-      <button onclick="numberDisplay('5')" class="colorThree" id="five">5</button>
-      <button onclick="numberDisplay('6')" class="colorThree" id="six">6</button>
-      <button class="colorTwo" id="minus">-</button>
-      <button onclick="numberDisplay('1')" class="colorThree" id="one">1</button>
-      <button onclick="numberDisplay('2')" class="colorThree" id="two">2</button>
-      <button onclick="numberDisplay('3')" class="colorThree" id="three">3</button>
-      <button class="colorTwo" id="plus">+</button>
-      <button onclick="numberDisplay('0')" class="zero colorThree" id="zero">0</button>
+      <button onclick="operators('/')" class="colorTwo">/</button>
+      <button onclick="numberDisplay('7')" class="colorThree">7</button>
+      <button onclick="numberDisplay('8')" class="colorThree">8</button>
+      <button onclick="numberDisplay('9')" class="colorThree">9</button>
+      <button onclick="operators('*')" class="colorTwo">*</button>
+      <button onclick="numberDisplay('4')" class="colorThree">4</button>
+      <button onclick="numberDisplay('5')" class="colorThree">5</button>
+      <button onclick="numberDisplay('6')" class="colorThree">6</button>
+      <button onclick="operators('-')" class="colorTwo">-</button>
+      <button onclick="numberDisplay('1')" class="colorThree">1</button>
+      <button onclick="numberDisplay('2')" class="colorThree">2</button>
+      <button onclick="numberDisplay('3')" class="colorThree">3</button>
+      <button onclick="operators('+')" class="colorTwo">+</button>
+      <button onclick="numberDisplay('0')" class="zero colorThree">0</button>
       <button class="colorThree">.</button>
-      <button class="colorTwo" id="equalTo">=</button>
+      <button onclick="operators('=')" class="colorTwo">=</button>
     </div>
   </div>
   
