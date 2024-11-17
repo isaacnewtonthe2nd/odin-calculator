@@ -1,3 +1,6 @@
+let displayContainer = document.querySelector(".display-container");
+displayContainer.style.cssText = `width: ${500 - 40}px; height: ${(560 / 6)}px; padding: 5px; margin-bottom: 10px; background-color: grey;`;
+
 let numeroUno;
 let numeroDos;
 let operator;
