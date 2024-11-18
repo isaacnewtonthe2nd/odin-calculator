@@ -1,6 +1,6 @@
 let displayContainer = document.querySelector(".display-container");
 displayContainer.style.cssText = `width: ${500 - 40}px; height: ${(560 / 6)}px; padding: 8px; margin-bottom: 10px; background-color: grey; font-size: 70px; text-align: right; color: black;`;
-displayContainer.value = '0';
+displayContainer.textContent = '0';
 
 let strNumeroUno = '';
 let strNumeroDos = '';
@@ -40,18 +40,18 @@ function divideNumbers(...nums) {
 }
 
 function numberDisplay(strNum) {
-  if (Number(displayContainer.value) <= 10e9) {
-    if (displayContainer.value === '0') {
-      return displayContainer.value = strNum;
+  if (Number(displayContainer.textContent) <= 10e10) {
+    if (displayContainer.textContent === '0') {
+      return displayContainer.textContent = strNum;
     } else if (!operator === true) {
-      return displayContainer.value += strNum;
+      return displayContainer.textContent += strNum;
     } else if (!operator === false) {
       strNumeroDos += strNum;
-      return displayContainer.value = strNumeroDos;
+      return displayContainer.textContent = strNumeroDos;
       // return displayContainer.value += secondNumber;
     }
   } else {
-    return displayContainer.value;
+    return displayContainer.textContent;
   }
 }
 
@@ -71,14 +71,14 @@ function operators (sign) {
 
 function equalTo () {
   if (!numeroUno === true || (numeroUno !== undefined && operator === undefined)) {
-    return displayContainer.value;
+    return displayContainer.textContent;
   } else {
-    numeroDos = Number(displayContainer.value);
+    numeroDos = Number(displayContainer.textContent);
     let result = operate(operator, numeroUno, numeroDos);
     numeroUno = result;
     operator = undefined;
     strNumeroDos = '';
-    return displayContainer.value = result;
+    return displayContainer.textContent = result;
   }
 }
 
@@ -87,7 +87,7 @@ function checkExpression (sign) {
     equalTo();
     operator = sign;
   } else {
-    numeroUno = Number(displayContainer.value);
+    numeroUno = Number(displayContainer.textContent);
     operator = sign;
   }
 }
@@ -96,7 +96,7 @@ function erase () {
   operator = undefined;
   numeroUno = undefined;
   strNumeroDos = '';
-  return displayContainer.value = '0';
+  return displayContainer.textContent = '0';
 }
 
 // console.log(operate(operator, numeroUno, numeroDos));
