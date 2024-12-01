@@ -1,1 +1,2 @@
 # odin-calculator
+This project is the last project of the odin project foundation course. It is meant to test my skills on html, css, and javascript thus far. This project heavily involves the use of javascript functions, methods, event listeners, and the DOM to make a functional calculator. So far, the calculator project is a success in a sense that it does all the functionn a regular calculator does. Obviously, some additional codes are necessary to make it better, but that will be a project for another time.
